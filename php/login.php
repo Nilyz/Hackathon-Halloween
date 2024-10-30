@@ -11,16 +11,14 @@
         <div class="inicioSesion">
             <div class="formulario">
                 <h1>Iniciar Sesión</h1>
-                <!-- <?php
-                include 'conexion.php';
-                ?> -->
+                <?php include 'conexion.php'; ?>
                 <form method="post" action="login.php">
                     <div class="usuario">
-                        <h3>Usuario</h3>
-                        <input type="text" name="usuario" id="usuario">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="">
                     </div>
                     <div class="boton">
-                        <input type="submit" name="btnEnviar">
+                        <input type="submit" name="btnEnviar" value="Ingresar">
                     </div>
                 </form>
             </div>
