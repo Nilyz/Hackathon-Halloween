@@ -34,7 +34,17 @@ function endGame() {
         });
     } else {
         resultDisplay.style.display = "block";
-        resultDisplay.innerHTML = '<img src="../img/perdiste.jpg" alt="Perdiste" style="width:100vw; height:100vh;">';
+        resultDisplay.innerHTML = '<img src="../img/monster.gif" alt="Perdiste" style="width:100vw; height:100vh;">';
+
+        // Redirige después de que termine el GIF
+        const monsterGif = resultDisplay.querySelector("img");
+        monsterGif.addEventListener("load", () => {
+            // Calcula el tiempo de duración del GIF y redirige al final
+            const gifDuration = 3000; // Cambia esto al tiempo de duración en milisegundos
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, gifDuration);
+        });
     }
 }
 
