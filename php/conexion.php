@@ -11,6 +11,8 @@ if ($conexion->connect_error){
     die("Conexión fallida: " . $conexion->connect_error);
 }
 
+$formularioEnviado = false;
+
 if(!empty($_POST['usuario'])){
     $usuario = $_POST['usuario'];
     
@@ -37,7 +39,10 @@ if(!empty($_POST['usuario'])){
         }
     }
 }else{
-    echo "Por favor ingrese un usuario";
+    if($formularioEnviado){
+        echo "Por favor ingrese un usuario";
+    }
+    
 }
 
 $conexion->close();
