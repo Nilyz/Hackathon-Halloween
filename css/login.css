@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+    
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicioSesion{
+    height: 300px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5%;
+}
