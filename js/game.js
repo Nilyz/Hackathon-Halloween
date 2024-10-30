@@ -10,7 +10,7 @@ class Game{
       this.started=false;
       this.gameOver=false;
       this.img=new Image();
-      this.img.src="./img/screamer";
+      this.img.src="./img/screamer.jpg";
 
       this.audio=new Audio();
       this.audio.src="res/scream.mp3";
