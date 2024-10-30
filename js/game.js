@@ -2,8 +2,8 @@ class Game {
    constructor(canvas, editMode = false) {
       this.currentLevel = 0;
       this.levels = levels;
-      this.corridorColor = "#FA0";
-      this.targetColor = "#F00";
+      this.corridorColor = "#313338";
+      this.targetColor = "#F00"; // Cambia el color objetivo a azul
       this.ctx = canvas.getContext("2d");
       this.ctx.strokeStyle = this.corridorColor;
 
@@ -21,7 +21,7 @@ class Game {
       };
 
       if (editMode) {
-         this.editor = new Editor(canvas, this.drawPaths, this.corridorColor, this.targetColor);
+         this.editor = new Editor(canvas, this.drawPaths.bind(this), this.corridorColor, this.targetColor);
       } else {
          this.drawPaths(this.levels[this.currentLevel]);
       }
@@ -103,7 +103,7 @@ class Game {
          this.ctx.moveTo(path.start.x, path.start.y);
          this.ctx.lineTo(path.end.x, path.end.y);
          if (path.type == "target") {
-            this.ctx.strokeStyle = this.targetColor;
+            this.ctx.strokeStyle = this.targetColor; // Usa el color definido
          } else {
             this.ctx.strokeStyle = this.corridorColor;
          }
