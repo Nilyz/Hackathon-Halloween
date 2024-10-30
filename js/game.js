@@ -1,23 +1,28 @@
-class Game{
-   constructor(canvas, editMode = false){
+class Game {
+   constructor(canvas, editMode = false) {
       this.currentLevel = 0;
       this.levels = levels;
-      this.corridorColor="#FA0";
-      this.targetColor="#F00";
+      this.corridorColor = "#FA0";
+      this.targetColor = "#F00";
       this.ctx = canvas.getContext("2d");
       this.ctx.strokeStyle = this.corridorColor;
 
-      this.started=false;
-      this.gameOver=false;
-      this.img=new Image();
-      this.img.src="./img/screamer.jpg";
+      this.started = false;
+      this.gameOver = false;
+      this.img = new Image();
+      this.img.src = "../img/screamer.jpg";  // Asegúrate de que el archivo tiene la extensión correcta
 
-      this.audio=new Audio();
-      this.audio.src="res/scream.mp3";
+      // Solo se puede usar la imagen una vez que ha cargado
+      this.img.onload = () => {
+         console.log("Imagen cargada correctamente.");
+      };
+      this.img.onerror = () => {
+         console.error("Error al cargar la imagen.");
+      };
 
-      if(editMode){
-         this.editor=new Editor(canvas, this.drawPaths, this.corridorColor, this.targetColor);
-      }else{
+      if (editMode) {
+         this.editor = new Editor(canvas, this.drawPaths, this.corridorColor, this.targetColor);
+      } else {
          this.drawPaths(this.levels[this.currentLevel]);
       }
       
@@ -30,7 +35,7 @@ class Game{
       });
 
       canvas.addEventListener("mousedown", (e) => {
-         if(this.started){
+         if (this.started) {
             return;
          }
          const imgData = this.ctx.getImageData(e.offsetX, e.offsetY, 1, 1);
@@ -39,13 +44,13 @@ class Game{
          if (a == 0) {
          } else {
             if (g == 0) {
-               this.started=true;
+               this.started = true;
                this.increaseLevel();
-            } 
+            }
          }
       });
       canvas.addEventListener("mousemove", (e) => {
-         if(!this.started || this.gameOver){
+         if (!this.started || this.gameOver) {
             return;
          }
          const imgData = this.ctx.getImageData(e.offsetX, e.offsetY, 1, 1);
@@ -62,25 +67,28 @@ class Game{
       });
    }
 
-   doGameOver(){
-      this.gameOver=true;
-      this.ctx.drawImage(this.img, 0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-      this.audio.play();
-      this.started=false;
+   doGameOver() {
+      this.gameOver = true;
+      if (this.img.complete) {  // Verificar si la imagen ya está completamente cargada
+         this.ctx.drawImage(this.img, 0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+      } else {
+         console.error("La imagen aún no está cargada.");
+      }
+      this.started = false;
    }
 
-   increaseLevel(){
-      if(this.currentLevel==this.levels.length-1){
-         this.gameOver=true;
+   increaseLevel() {
+      if (this.currentLevel == this.levels.length - 1) {
+         this.gameOver = true;
          this.ctx.font = "30px Arial";
-         this.ctx.fillStyle="white";
-         this.ctx.strokeStyle="black";
-         this.ctx.textAlign="center";
-         this.ctx.textBaseline="middle";
-         this.ctx.lineWidth=1;
-         this.ctx.fillText("You won!", this.ctx.canvas.width/2, this.ctx.canvas.height/2);
-         this.ctx.strokeText("You won!", this.ctx.canvas.width/2, this.ctx.canvas.height/2);
-         this.started=false;
+         this.ctx.fillStyle = "white";
+         this.ctx.strokeStyle = "black";
+         this.ctx.textAlign = "center";
+         this.ctx.textBaseline = "middle";
+         this.ctx.lineWidth = 1;
+         this.ctx.fillText("You won!", this.ctx.canvas.width / 2, this.ctx.canvas.height / 2);
+         this.ctx.strokeText("You won!", this.ctx.canvas.width / 2, this.ctx.canvas.height / 2);
+         this.started = false;
          return;
       }
       this.currentLevel++;
@@ -94,21 +102,21 @@ class Game{
          this.ctx.lineWidth = path.width;
          this.ctx.moveTo(path.start.x, path.start.y);
          this.ctx.lineTo(path.end.x, path.end.y);
-         if(path.type=="target"){
+         if (path.type == "target") {
             this.ctx.strokeStyle = this.targetColor;
-         }else{
+         } else {
             this.ctx.strokeStyle = this.corridorColor;
          }
          this.ctx.stroke();
-         if(path.text){
+         if (path.text) {
             this.ctx.font = "30px Arial";
-            this.ctx.fillStyle="black";
-            this.ctx.textAlign="center";
-            this.ctx.textBaseline="middle";
-            const avg={
-               x:(path.start.x+path.end.x)/2,
-               y:(path.start.y+path.end.y)/2
-            }
+            this.ctx.fillStyle = "black";
+            this.ctx.textAlign = "center";
+            this.ctx.textBaseline = "middle";
+            const avg = {
+               x: (path.start.x + path.end.x) / 2,
+               y: (path.start.y + path.end.y) / 2
+            };
             this.ctx.fillText(path.text, avg.x, avg.y);
          }
       }
