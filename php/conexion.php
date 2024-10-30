@@ -37,7 +37,7 @@ if(!empty($_POST['usuario'])){
         }
     }
 }else{
-    echo "Porfavor ingrese un usuario";
+    echo "Por favor ingrese un usuario";
 }
 
 $conexion->close();

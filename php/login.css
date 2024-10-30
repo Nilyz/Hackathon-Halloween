@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicioSesion{
+    height: 300px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: gray;
+}
+.formulario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.usuario{
+    width: 80%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ususario input{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+.boton{
+    width: 50%;
+    height: 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+.boton input{
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+}
