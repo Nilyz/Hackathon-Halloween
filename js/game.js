@@ -10,7 +10,12 @@ class Game {
       this.started = false;
       this.gameOver = false;
       this.img = new Image();
+      this.img2 = new Image();
       this.img.src = "../img/screamer.jpg";  // Asegúrate de que el archivo tiene la extensión correcta
+      this.img2.src = "../img/llave.png";  // Asegúrate de que el archivo tiene la extensión correcta
+
+      this.audio=new Audio();
+      this.audio.src="../audios/Milo J_ Bzrp Music Sessions, Vol. 57_hGWa-GO8mKg.mp3";
 
       // Solo se puede usar la imagen una vez que ha cargado
       this.img.onload = () => {
@@ -25,7 +30,7 @@ class Game {
       } else {
          this.drawPaths(this.levels[this.currentLevel]);
       }
-      
+
       this.addEventListeners(canvas);
    }
 
@@ -69,6 +74,7 @@ class Game {
 
    doGameOver() {
       this.gameOver = true;
+      this.audio.play();
       if (this.img.complete) {  // Verificar si la imagen ya está completamente cargada
          this.ctx.drawImage(this.img, 0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
       } else {
@@ -88,6 +94,29 @@ class Game {
          this.ctx.lineWidth = 1;
          this.ctx.fillText("You won!", this.ctx.canvas.width / 2, this.ctx.canvas.height / 2);
          this.ctx.strokeText("You won!", this.ctx.canvas.width / 2, this.ctx.canvas.height / 2);
+   
+         // Dibuja `img2` en una posición específica, por ejemplo, en el centro del canvas
+         const imgX = (this.ctx.canvas.width - this.img2.width) / 2;
+         const imgY = (this.ctx.canvas.height - this.img2.height) / 2;
+         this.ctx.drawImage(this.img2, imgX, imgY);
+   
+         // Añade un evento `click` al canvas para verificar si el clic está dentro de `img2`
+         this.ctx.canvas.addEventListener("click", (e) => {
+            // Obtiene la posición del clic
+            const rect = this.ctx.canvas.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const clickY = e.clientY - rect.top;
+   
+            // Verifica si el clic está dentro de la imagen `img2`
+            if (
+               clickX >= imgX && clickX <= imgX + this.img2.width &&
+               clickY >= imgY && clickY <= imgY + this.img2.height
+            ) {
+               // Redirige a otra página si el clic está dentro de `img2`
+               window.location.href = "../html/hall.html";
+            }
+         });
+   
          this.started = false;
          return;
       }
@@ -95,6 +124,7 @@ class Game {
       this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
       this.drawPaths(this.levels[this.currentLevel]);
    }
+   
 
    drawPaths(paths) {
       for (const path of paths) {
