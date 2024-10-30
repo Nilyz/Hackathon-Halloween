@@ -20,8 +20,6 @@ main {
 }
 
 .maze {
-    height: 80vh;
-    width: 90vw;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
+    
+    cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/zombie/zombie-cursor-32x32.png), default !important;
 }
