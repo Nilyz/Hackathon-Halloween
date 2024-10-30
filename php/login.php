@@ -1,36 +1,33 @@
-<?php
 
-$servidor = "localhost";
-$usuario = "root";
-$password = "";
-$baseDatos = "hackathon_halloween";
 
-$conexion = new mysqli($servidor, $usuario, $password, $baseDatos);
-
-if ($conexion->connect_error){
-    die("Conexión fallida: " . $conexion->connect_error);
-}
-
-if(!empty($_POST['usuario'])){
-    $usuario = $_POST['usuario'];
-    
-    // Consulta a la base de datos
-    $consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
-    $resultado = $conexion->query($consulta);
-    if($resultado -> num_rows > 0){
-    //El usuario existe, inicia sesión
-        session_start();
-        $_SESSION['usuario'] = $usuario;
-        header("Location: ../index.php");
-        exit();
-    } else {
-        //El usuario no existe, lo insertamos en la base de datos
-        $insercion = "INSERT INTO usuarios (usuario) VALUES ('$usuario')";
-        if ($conexion->query($insercion) === TRUE) {
-            session_start();
-            $_SESSION['usuario'] = $usuario;
-            header('Location: ../html/index.html');
-            exit();
-        }
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <div class="inicioSesion">
+            <div class="formulario">
+                <h1>Iniciar Sesión</h1>
+                <?php
+                include 'conexion.php';
+                ?>
+                <form method="post" action="login.php">
+                    <div class="usuario">
+                        <h3>Usuario</h3>
+                        <input type="text" name="usuario" id="usuario">
+                    </div>
+                    <div class="boton">
+                        <input type="submit" name="btnEnviar">
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </main>
+</body>
+</html>
