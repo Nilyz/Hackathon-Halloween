@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/baño.css">
-    <title>Juego de la Llave</title>
+    <link rel="stylesheet" href="../css/popup.css" />
+    <script src="../js/baño.js" defer></script>
+    <title>Baño</title>
 </head>
 <body>
 
     <main>
+
+        <div class="historia">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur tempore est nulla porro! Ducimus unde quas magnam beatae, quibusdam recusandae culpa facilis. Cumque id recusandae aliquid tempora nam in accusamus?</p>
+        </div>
+
         <div class="contador">Tiempo: <span id="timer">20</span>s</div>
-        <button id="clickButton">
+        <button id="clickButton" disabled>
             <span id="clickCount">0</span> / 10 Clicks
         </button>
+        
         <div id="result" class="result"></div>
+
+        <div id="startMessage" class="start-message" style="display: none;">
+            <p></p>
+        </div>
+        
+
     </main>
     
-    <script src="../js/baño.js"></script>
 </body>
 </html>
