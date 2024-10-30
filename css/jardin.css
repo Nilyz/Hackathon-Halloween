@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(../img/calabazas-alemania_1150964-102241.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.textBox{
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    display: none;
+    color: red;
+    font-size: 36px;
+    text-align: center;
+    padding: 40px;
+}
+
+.cont{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+a{
+    width: 100%;
+    height: 100%;
+}
+.cont:hover{
+    cursor: pointer;
+}
+.cont1{
+    height: 100px;
+    width: 220px;
+    top: 230px;
+    left: 40%;
+}
+.cont2{
+    height: 400px;
+    width: 200px;
+    top: 100px;
+    left: 16%;
+}
+.cont3{
+    height: 400px;
+    width: 200px;
+    top: 100px;
+    right: 22%;
+}
+.cont4{
+    height: 200px;
+    width: 90px;
+    bottom: 40%;
+    right: 3%;
+}
+.message{
+    width: 60%;
+    height: 60%;
+    z-index: 1000;
+    display: none;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}

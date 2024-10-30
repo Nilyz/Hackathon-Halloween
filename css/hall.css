@@ -33,3 +33,14 @@ div{
     border: 5px solid rgba(181, 56, 37, 0.603);
     cursor: pointer;
 }
+
+.cont{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+}
+.sotano{
+    height: 90%;
+    width: 100px;
+    margin-left: 25%;
+}
