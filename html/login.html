@@ -9,15 +9,18 @@
 <body>
     <main>
         <div class="inicioSesion">
-            <div>
+            <div class="formulario">
                 <h1>Iniciar Sesión</h1>
-                <div class="formulario">
-                    <h3>usuario</h3>
-                    <input type="text" name="usuario" id="usuario">
-                    <br>
-                    <h3>contraseña</h3>
-                    <input type="password" name="contraseña" id="contraseña">
-                </div>
+                <form method="post" action="login.php">
+                    <div class="usuario">
+                        <h3>Usuario</h3>
+                        <input type="text" name="usuario" id="usuario">
+                    </div>
+                    <div class="boton">
+                        <input type="submit" name="btnEnviar">
+                    </div>
+                </form>
+                
             </div>
         </div>
     </main>
