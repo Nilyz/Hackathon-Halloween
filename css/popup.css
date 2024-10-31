@@ -1,10 +1,3 @@
-.puerta-entrada-fuera {
-    width: 100px;
-    height: 200px;
-    background-color: brown;
-    margin: 100px auto;
-}
-
 .mensaje-error {
     display: none;
     position: absolute;
