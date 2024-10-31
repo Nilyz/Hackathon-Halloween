@@ -15,5 +15,21 @@
     <div class="salirBtn"><a href="../index.html">
         <img src="../img/exit-2-svgrepo-com.svg" alt="">
     </a></div>
+
+    <script>
+        const ambientSound = document.getElementById("ambientSound");
+
+        // Quitar el silencio al cargar la página
+        window.addEventListener("load", () => {
+            ambientSound.muted = false; // Desactivar silencio
+        });
+
+        // Reproducir sonido al hacer clic
+        document.addEventListener("click", () => {
+            if (ambientSound.paused) {
+                ambientSound.play();
+            }
+        });
+    </script>
 </body>
 </html>

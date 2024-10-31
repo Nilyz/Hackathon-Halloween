@@ -17,6 +17,9 @@ class Game {
       this.audio=new Audio();
       this.audio.src="../audios/Sonido_de_screamer.mp3";
 
+      this.audio2=new Audio();
+      this.audio2.src="../audios/llave.mp3";
+
       // Solo se puede usar la imagen una vez que ha cargado
       this.img.onload = () => {
          console.log("Imagen cargada correctamente.");
@@ -99,6 +102,7 @@ class Game {
          const imgX = (this.ctx.canvas.width - this.img2.width) / 2;
          const imgY = (this.ctx.canvas.height - this.img2.height) / 2;
          this.ctx.drawImage(this.img2, imgX, imgY);
+         this.audio2.play();
    
          // Añade un evento `click` al canvas para verificar si el clic está dentro de `img2`
          this.ctx.canvas.addEventListener("click", (e) => {
