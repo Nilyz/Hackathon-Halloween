@@ -5,7 +5,7 @@ const clickButton = document.getElementById("clickButton");
 const startMessageText = startMessage.querySelector("p"); // Selecciona el <p> dentro de startMessage
 
 
-let timeLeft = 10;
+let timeLeft = 3;
 let clickCount = 0;
 let gameTimer;
 let countdownTimer;
@@ -46,7 +46,7 @@ function startCountdown() {
 
 // Configura la espera inicial de 10 segundos antes de comenzar la cuenta regresiva
 window.onload = () => {
-    let waitTime = 10;
+    let waitTime = 5;
 
     // Temporizador para los primeros 10 segundos de espera
     const waitTimer = setInterval(() => {

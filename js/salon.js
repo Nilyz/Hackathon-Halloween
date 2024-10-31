@@ -61,7 +61,7 @@ function checkWin() {
         resultDisplay.innerHTML = '<p>¡Conseguiste la llave!</p><img src="../img/llave.png" alt="Llave" id="llave">';
         
         document.getElementById("llave").addEventListener("click", () => {
-            window.location.href = "../html/jardin.html";
+            window.location.href = "../html/hall.html";
         });
         console.log("¡Ganaste el juego!");
     }
