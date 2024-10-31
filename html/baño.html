@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/baño.css">
-    <link rel="stylesheet" href="../css/popup.css" />
-    <script src="../js/baño.js" defer></script>
-    <title>Baño</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/baño.css" />
+        <link rel="stylesheet" href="../css/popup.css" />
+        <script src="../js/baño.js" defer></script>
+        <script src="../js/getKey.js" defer></script>
+        <script src="../js/showPlayer.js" defer></script>
+        <title>Baño</title>
+    </head>
+    <body>
 
-    <main>
+        <audio id="gameOverSound" src="../audios/Sonido_de_screamer.mp3" preload="auto"></audio>
 
-        <div class="historia">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur tempore est nulla porro! Ducimus unde quas magnam beatae, quibusdam recusandae culpa facilis. Cumque id recusandae aliquid tempora nam in accusamus?</p>
-        </div>
+        <main>
+            <div class="historia">
+                <p>
+                    ¿Qué es eso? ¡Algo está saliendo de la bañera! ¡Esto no es
+                    bueno!
+                    
+                </p>
+                <p>¡La puerta está bloqueada! ¿Por qué no se abre?</p>
+            </div>
 
-        <div class="contador">Tiempo: <span id="timer">10</span>s</div>
-        <button id="clickButton" disabled>
-            <span id="clickCount">0</span> / 10 Clicks
-        </button>
-        
-        <div id="result" class="result"></div>
+            <div class="contador">Tiempo: <span id="timer">10</span>s</div>
+            <button id="clickButton" disabled>
+                <span id="clickCount">0</span> / 10 "Forzar la puerta"
+            </button>
 
-        <div id="startMessage" class="start-message" style="display: none;">
-            <p></p>
-        </div>
-        
+            <div id="result" class="result"></div>
 
-    </main>
-    
-</body>
+            <div id="startMessage" class="start-message" style="display: none">
+                <p></p>
+            </div>
+        </main>
+    </body>
 </html>

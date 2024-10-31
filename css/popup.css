@@ -15,7 +15,7 @@
     margin: 0;
     display: none;
     position: fixed;
-    top: 0;
+    top: 10%;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -31,19 +31,21 @@
 }
 
 .historia{
-    border-radius: 10px;
-    background-color: red;
-    color: white;
-    width: 90%;
-    height: auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+    top: 0;
+    display: block;
+    color: white;
+    font-size: 22px;
+    text-align: left;
+    padding: 15px 50px 15px 50px;
+    font-family: 'fuenteTerror';
+
+}
+.historia p{
+    margin-bottom: 10px;
 }
 
 .start-message {

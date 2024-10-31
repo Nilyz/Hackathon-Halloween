@@ -67,15 +67,15 @@ function endGame() {
 
     if (clickCount >= 10) {
         resultDisplay.style.display = "block";
-        resultDisplay.innerHTML = '<p>¡Conseguiste la llave!</p><img src="../img/llave.png" alt="Llave" id="llave">';
+        resultDisplay.innerHTML = '<p>¡Conseguiste la llave!</p><img src="../img/llave.png" alt="Llave" id="cont4">';
         
-        document.getElementById("llave").addEventListener("click", () => {
-            window.location.href = "../html/jardin.html";
+        document.getElementById("cont4").addEventListener("click", () => {
+            window.location.href = "../html/hall.html";
         });
     } else {
         resultDisplay.style.display = "block";
+        gameOverSound.play();
         resultDisplay.innerHTML = '<img src="../img/monster.gif" alt="Perdiste" style="width:100vw; height:100vh;">';
-
         const monsterGif = resultDisplay.querySelector("img");
         monsterGif.addEventListener("load", () => {
             const gifDuration = 3000; 

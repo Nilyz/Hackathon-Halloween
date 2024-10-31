@@ -10,13 +10,13 @@ const textBox = document.getElementById("textBox");
 function showAlert(contenedor) {
     if(contenedor===1){
         content__img.src="../img/larvas.png";
-        textBox.innerText = "¡Oh no! ¡Son larvas! ¡Qué asco!";
+        textBox.innerText = "¡Ugh! ¡Larvas! Esto es repugnante. Este lugar está lleno de descomposición.";
     }else if(contenedor===2){
         content__img.src="../img/rata.gif";
-        textBox.innerText = "¡Oh no! ¡Es una rata! ¡Qué asco!";
+        textBox.innerText = "¡Qué asco! Una rata. ¿Qué demonios hace aquí? No me gusta este lugar...";
     }else if(contenedor===3){
         content__img.src="../img/cadaver.gif";
-        textBox.innerText = "¡Oh no! ¡Es un cadáver! ¡Qué asco!";
+        textBox.innerText = "Siento que me va a dar un infarto. ¿Qué le ocurrió a esta persona? Esto no augura nada bueno.";
     }else if(contenedor===4){
         content__img.src="../img/llave.png";
         keyy.href="../index.html";

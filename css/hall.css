@@ -30,7 +30,6 @@ body{
     top: 40%;
 }
 div{
-    border: 5px solid rgba(181, 56, 37, 0.603);
     cursor: pointer;
 }
 

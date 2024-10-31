@@ -11,11 +11,11 @@ class Game {
       this.gameOver = false;
       this.img = new Image();
       this.img2 = new Image();
-      this.img.src = "../img/screamer.jpg";  // Asegúrate de que el archivo tiene la extensión correcta
+      this.img.src = "../img/monster.gif";  // Asegúrate de que el archivo tiene la extensión correcta
       this.img2.src = "../img/llave.png";  // Asegúrate de que el archivo tiene la extensión correcta
 
       this.audio=new Audio();
-      this.audio.src="../audios/Milo J_ Bzrp Music Sessions, Vol. 57_hGWa-GO8mKg.mp3";
+      this.audio.src="../audios/Sonido_de_screamer.mp3";
 
       // Solo se puede usar la imagen una vez que ha cargado
       this.img.onload = () => {

@@ -1,4 +1,4 @@
-.outside-img{
+.outside-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -8,20 +8,20 @@
     z-index: -1;
 }
 
-*{
+* {
     padding: 0%;
     box-sizing: border-box;
     margin: 0;
 }
-body{
+body {
     width: 100%;
     height: 100vh;
-    background-image: url('../img/house.png');
+    background-image: url("../img/house.png");
     background-size: cover;
     background-position: center;
     position: relative;
 }
-.puerta-entrada-fuera{
+.puerta-entrada-fuera {
     position: absolute;
     bottom: 50%;
     height: 20%;
@@ -29,20 +29,22 @@ body{
     margin-left: 400px;
     top: 40%;
 }
-div{
-    border: 5px solid rgba(181, 56, 37, 0.603);
+div {
     cursor: pointer;
 }
-.jardin{
+.jardin {
     position: absolute;
     top: 50%;
     left: 6%;
     height: 100px;
     width: 200px;
 }
-.infoJugador{
+.infoJugador {
     width: 100%;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.404);
     backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 0;
+    display: none;
 }
