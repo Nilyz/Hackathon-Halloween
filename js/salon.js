@@ -1,4 +1,4 @@
-let keys = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]; // Teclas posibles
+let keys = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Z", "X", "C", "V", "B", "N", "M"]; // Teclas posibles
 let score = 0;
 let fails = 0;
 let currentKey = "";
