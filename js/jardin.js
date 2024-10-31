@@ -11,16 +11,21 @@ function showAlert(contenedor) {
     if(contenedor===1){
         content__img.src="../img/larvas.png";
         textBox.innerText = "¡Ugh! ¡Larvas! Esto es repugnante. Este lugar está lleno de descomposición.";
+        larvas.play();
     }else if(contenedor===2){
         content__img.src="../img/rata.gif";
         textBox.innerText = "¡Qué asco! Una rata. ¿Qué demonios hace aquí? No me gusta este lugar...";
+        ratas.play();
     }else if(contenedor===3){
         content__img.src="../img/cadaver.gif";
         textBox.innerText = "Siento que me va a dar un infarto. ¿Qué le ocurrió a esta persona? Esto no augura nada bueno.";
+        cadaver.play();
     }else if(contenedor===4){
         content__img.src="../img/llave.png";
         keyy.href="../index.html";
         textBox.innerText = "LO ENCONTRE!!, Volvamos a la puerta principal";
+        llavesS.play();
+        llavesS.play();
     }
     message.style.display = "block";
     textBox.style.display = "block";
