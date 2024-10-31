@@ -4,7 +4,7 @@ const cont3 = document.getElementById("cont3");
 const cont4 = document.getElementById("cont4");
 const message = document.getElementById("message");
 const content__img= document.getElementById("content__img");
-const keyy= document.getElementById("key");
+const key= document.getElementById("key");
 const textBox = document.getElementById("textBox");
 
 function showAlert(contenedor) {
@@ -19,7 +19,7 @@ function showAlert(contenedor) {
         textBox.innerText = "¡Oh no! ¡Es un cadáver! ¡Qué asco!";
     }else if(contenedor===4){
         content__img.src="../img/llave.png";
-        keyy.href="../index.html";
+        key.href="../index.html";
         textBox.innerText = "LO ENCONTRE!!, Volvamos a la puerta principal";
     }
     message.style.display = "block";
