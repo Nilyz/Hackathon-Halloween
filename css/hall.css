@@ -40,7 +40,30 @@ div{
     width: 100px;
 }
 .sotano{
-    height: 90%;
+    height: 85%;
     width: 100px;
-    margin-left: 25%;
+    margin-left: 33%;
+}
+.banio{
+    height: 90%;
+    width: 200px;
+    right: 5%;
+}
+
+.salon{
+    height: 32%;
+    width: 150px;
+    left: 47%;
+    top: 35%;
+}
+
+.salirBtn{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: 0;
+    left: 50%;
+}
+.salirBtn img{
+    height: 100%;
 }

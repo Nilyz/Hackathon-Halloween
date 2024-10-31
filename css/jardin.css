@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'fuenteTerror'; 
+    src: url('you-murderer/youmurdererbb_reg.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 main{
     height: 100vh;
     width: 100vw;
@@ -29,6 +36,7 @@ main{
     font-size: 36px;
     text-align: center;
     padding: 40px;
+    font-family: 'fuenteTerror'
 }
 
 .cont{
