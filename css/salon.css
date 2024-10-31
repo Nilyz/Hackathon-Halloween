@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-image: url("../img/house.png");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gameContainer {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quickTimeEvent {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.keyPrompt{
+    width: 100%;
+    font-size: 2rem;
+}
+
+.timer{
+    width: 100%;
+    font-size: 2rem;
+}
+
+.score{
+    width: 100%;
+    font-size: 2rem;
+}
+
+.gameOver {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameOver img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.result{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}

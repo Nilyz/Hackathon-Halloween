@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/salon.css">
+    <link rel="stylesheet" href="../css/popup.css">
+    <script src="../js/salon.js" defer></script>
+    <title>Salón</title>
 </head>
 <body>
-    
+
+    <main>
+
+        <div class="historia">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur tempore est nulla porro! Ducimus unde quas magnam beatae, quibusdam recusandae culpa facilis. Cumque id recusandae aliquid tempora nam in accusamus?</p>
+        </div>
+
+        <div class="gameContainer" id="gameContainer">
+            <div class="quickTimeEvent" id="quickTimeEvent">
+                <h2 class="keyPrompt" id="keyPrompt"></h2>
+                <p class="timer" id="timer">3</p>
+                <p class="score" id="score">Aciertos: 0 | Fallos: 0</p>
+            </div>
+            <div class="gameOver" id="gameOver">
+                <img src="../img/screamer.jpg" alt="Game Over">
+            </div>
+
+            <div id="result" class="result"></div>
+        </div>
+        
+    </main>
 </body>
 </html>
